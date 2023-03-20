@@ -1,6 +1,6 @@
 {
   "name": "bpmn-auto-layout",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Layout BPMN diagrams, generating missing DI information",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/bpmn-io/bpmn-auto-layout#readme",
   "dependencies": {
-    "bpmn-moddle": "^6.0.0",
+    "bpmn-moddle": "^8.0.0",
     "min-dash": "^3.5.2"
   },
   "devDependencies": {

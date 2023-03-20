@@ -10,26 +10,12 @@ async function cleanDI(diagramXML) {
 
   const moddle = new BpmnModdle();
 
-  return new Promise(function(resolve, reject) {
+  const { rootElement: definitions } = await moddle.fromXML(diagramXML);
 
-    moddle.fromXML(diagramXML, function(err, definitions) {
+  definitions.diagrams = [];
 
-      if (err) {
-        return reject(err);
-      }
-
-      definitions.diagrams = [];
-
-      moddle.toXML(definitions, function(err, xml) {
-
-        if (err) {
-          return reject(err);
-        }
-
-        return resolve(xml);
-      });
-    });
-  });
+  const { xml } = await moddle.toXML(definitions);
+  return xml;
 }
 
 async function test(diagramName) {
